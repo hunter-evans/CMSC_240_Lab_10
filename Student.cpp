@@ -51,11 +51,16 @@ void clearCourses() {
 }
 
 struct tm getAdmitDate() {
-  return null;
+  struct tm admitDate;
+  admitDate.tm_mday = 1;
+  admitDate.tm_mon = 1;
+  admitDate.tm_year = 2016-1900;
+  return admitDate;
 }
 
 School getSchool() {
-  return Student::AS;
+  School sch = UNDEFINED;
+  return sch;
 }
 
 double getGPA() {
