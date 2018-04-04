@@ -10,7 +10,7 @@ int main() {
   //Student tests
   std::cout << "========Beginning Student tests========" << std::endl;
   Student s(12345678, "jd1yz", "Doe", "Jane", 1, 1, 1995, "jane.doe@richmond.edu",
-            8045551212, 1, 5, 2016, AS, false, 0.0);
+	    "123 Main Street", 8045551212, 1, 5, 2016, Student::AS, false, 0.0);
 
   s.addCourse("CMSC150");
   s.addCourse("FYS100");
@@ -26,8 +26,9 @@ int main() {
   std::cout << admitDate.tm_mday << ", " << admitDate.tm_mon << ", " <<
                admitDate.tm_year << " [1, 5, 2016]" << std::endl;
 
-  s.setSchool(UNDEFINED);
-  School studSchool = s.getSchool();
+
+  s.setSchool(Student::UNDEFINED);
+  Student::School studSchool = s.getSchool();
   std::cout << "Testing School methods:" << std::endl;
   std::cout << studSchool << " [UNDEFINED]" << std::endl;
 

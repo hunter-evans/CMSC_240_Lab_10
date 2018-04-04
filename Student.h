@@ -12,7 +12,14 @@ class Student : public Person
         enum School {AS, JSLS, LAW, RSB, SPCS, UNDEFINED};
 
     protected:
-        // instance variables here...
+	int admit_day;
+	int admit_month;
+	int admit_year;
+	School sch;
+	bool full_time;
+	double completed_units;
+	double stud_gpa;
+	
         
     public:
         Student();                      // explicitly call Person() on implementation
