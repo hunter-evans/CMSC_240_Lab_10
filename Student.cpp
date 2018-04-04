@@ -5,11 +5,24 @@
 #include "Person.h"
 #include "Student.h"
 
-Student::Student() {
+Student::Student() : Person() {
+	admit_day = 0;
+	admit_month = 0;
+	admit_year = 0;
+	sch = Student::UNDEFINED;
+	full_time = false;
+	completed_units = 0.0;
+	stud_gpa = 0.0;
 }
 
-Student::Student(const Student& other) {
-
+Student::Student(const Student& other) : Person(other) {
+	admit_day = other.admit_day;
+        admit_month = other.admit_month;
+        admit_year = other.admit_month;
+        sch = other.sch;
+        full_time = other.full_time;
+        completed_units = other.completed_units;
+        stud_gpa = other.stud_gpa;
 }
 
 Student::Student(int urid, std::string netid, std::string lname, std::string fname,
@@ -26,79 +39,81 @@ Student::Student(int urid, std::string netid, std::string lname, std::string fna
 	sch = school;
 	full_time = is_full_time;
 	completed_units = units_completed;
+	stud_gpa = 0.0;
 }
 
 Student::~Student() {
 
 }
 
-std::list<std::string> getCourses() {
+std::list<std::string> Student::getCourses() {
+	std::list<std::string> courses;
+	return courses;
+}
+
+void Student::addCourse(std::string course) {
 
 }
 
-void addCourse(std::string course) {
+void Student::removeCourse(std::string course) {
 
 }
 
-void removeCourse(std::string course) {
+void Student::printCourses() {
 
 }
 
-void printCourses() {
+void Student::setCourses(std::list<std::string> courses) {
 
 }
 
-void setCourses(std::list<std::string> courses) {
+void Student::clearCourses() {
 
 }
 
-void clearCourses() {
-
+struct tm Student::getAdmitDate() {
+	struct tm admitDate;
+	admitDate.tm_mday = admit_day;
+	admitDate.tm_mon = admit_month;
+	admitDate.tm_year = admit_year + 1900;
+	return admitDate;
 }
 
-struct tm getAdmitDate() {
-  struct tm admitDate;
-  admitDate.tm_mday = admit_day;
-  admitDate.tm_mon = admit_month;
-  admitDate.tm_year = admit_year - 1900;
-  return admitDate;
+Student::School Student::getSchool() {
+	return sch;
 }
 
-Student::School getSchool() {
-  return sch;
+double Student::getGPA() {
+	return stud_gpa;
 }
 
-double getGPA() {
-  return stud_gpa;
+double Student::getUnitsCompleted() {
+	return completed_units;
 }
 
-double getUnitsCompleted() {
-  return completed_units;
+bool Student::isFullTime() {
+	return full_time;
 }
 
-bool isFullTime() {
-  return full_time;
-}
-
-void setAdmitDate(int day, int month, int year) {
+void Student::setAdmitDate(int day, int month, int year) {
 	admit_day = day;
 	admit_month = month;
 	admit_year = year;
 }
 
-void setSchool(Student::School school) {
+void Student::setSchool(Student::School school) {
 	sch = school;
 }
 
-void setGPA(double gpa) {
+void Student::setGPA(double gpa) {
 	stud_gpa = gpa;
 }
 
-void setUnitsCompleted(double units) {
+void Student::setUnitsCompleted(double units) {
 	completed_units = units;
 }
 
-void setFullTimeStatus(bool isFullTime) {
+void Student::setFullTimeStatus(bool isFullTime) {
 	full_time = isFullTime;
 }
 
