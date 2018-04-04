@@ -12,6 +12,7 @@ Person::Person(int urid, std::string netid, std::string lname, std::string fname
 
 Person::Person(int urid, int netid, std::string lname, std::string fname, int dob_day, int dob_month, int dob_year, std::string email, std::string address, long phone) {
 	 first = fname;
+	 last = lname;
 }
 
 Person::~Person() {}
@@ -20,20 +21,11 @@ Person::~Person() {}
 //GETTER FUNCTIONS
 std::string Person::getFirstName() {
 
-	return ""; 
-}
-
-std::string Person::getLastName() {
-	return "";
-}
-
-struct tm Person::getDateOfBirth() {
-
 	return first; 
 }
 
 std::string Person::getLastName() {
-	return "Just a starter";
+	return last;
 }
 
 struct tm Person::getDateOfBirth() {

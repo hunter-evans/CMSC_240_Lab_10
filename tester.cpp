@@ -3,7 +3,7 @@
 #include "Student.h"
 
 int main() {
-  Person p(29977710, "wr5gk", "Freeman", "Freddie", 7, 4, 1996, "ffreeman@braves.com", "2 Hank Aaron Drive", 8043600327); 
+  Person p(29977710, "wr5gk", "Freeman", "James", 7, 4, 1996, "ffreeman@braves.com", "2 Hank Aaron Drive", 8043600327); 
 
 
   //Person tests
@@ -12,13 +12,10 @@ int main() {
   std::cout << std::endl;
 
   //Get First Name
-  std::cout << "Testing getFirstName. Should equal 'Freddie': " << std::endl;
+  std::cout << "Testing First Name Methods. Should equal 'Freddie': " << std::endl;
+  p.setFirstName("Freddie");
   std::string fname = p.getFirstName();
   std::cout << fname << std::endl;
-
-
-
-
 
   std::cout << std::endl;
 

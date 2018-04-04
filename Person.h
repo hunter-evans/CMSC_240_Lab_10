@@ -8,6 +8,8 @@ class Person
 {
     protected:
         std::string first;
+        std::string last;
+        
 
     public:
         Person();
