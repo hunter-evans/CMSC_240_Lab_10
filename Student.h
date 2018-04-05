@@ -1,4 +1,4 @@
-#ifndef __STUDENT_H__
+/*#ifndef __STUDENT_H__
 #define __STUDENT_H__
 
 #include <list>
@@ -46,3 +46,4 @@ class Student : public Person
 };
 
 #endif
+*/
