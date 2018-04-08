@@ -8,13 +8,18 @@ class Person
 {
     protected:
         std::string first;
+        std::string last;
+        std::string NetID;
+        std::string home;
+        std::string mail;
+        struct tm dob;
+        int URID; 
+        long cell;
 
     public:
         Person();
         Person(const Person& other);
-        Person(int urid, std::string netid, std::string lname, std::string fname, 
-               int dob_day, int dob_month, int dob_year,
-               std::string email, std::string address, long phone);
+        Person(int urid, std::string netid, std::string lname, std::string fname, int dob_day, int dob_month, int dob_year, std::string email, std::string address, long phone);
         ~Person();
 
         std::string  getFirstName();

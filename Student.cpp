@@ -1,3 +1,6 @@
+//Name: Hunter Evans and Palmer Robins
+//Implementation of Student methods described in the header file
+
 #ifndef __STUDENT_CPP__
 #define __STUDENT_CPP__
 
@@ -6,6 +9,7 @@
 #include "Person.h"
 #include "Student.h"
 
+//Constructors (All use a call to Person constructors)
 Student::Student() : Person() {
 	admit_day = 0;
 	admit_month = 0;
@@ -47,6 +51,7 @@ Student::~Student() {
 
 }
 
+//Courses methods (std::list<std::string> methods)
 std::list<std::string> Student::getCourses() {
 	return stud_courses;
 }
@@ -77,11 +82,12 @@ void Student::clearCourses() {
 	stud_courses.clear();
 }
 
+//Accessor methods
 struct tm Student::getAdmitDate() {
 	struct tm admitDate;
 	admitDate.tm_mday = admit_day;
 	admitDate.tm_mon = admit_month;
-	admitDate.tm_year = admit_year - 1900;
+	admitDate.tm_year = admit_year + 1900;
 	return admitDate;
 }
 
@@ -101,10 +107,11 @@ bool Student::isFullTime() {
 	return full_time;
 }
 
+//Mutator methods
 void Student::setAdmitDate(int day, int month, int year) {
 	admit_day = day;
 	admit_month = month;
-	admit_year = year;
+	admit_year = year - 1900;
 }
 
 void Student::setSchool(Student::School school) {
