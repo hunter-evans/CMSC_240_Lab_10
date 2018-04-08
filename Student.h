@@ -19,6 +19,7 @@ class Student : public Person
 	bool full_time;
 	double completed_units;
 	double stud_gpa;
+	std::list<std::string> stud_courses;
 	
         
     public:

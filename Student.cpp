@@ -1,6 +1,7 @@
 #ifndef __STUDENT_CPP__
 #define __STUDENT_CPP__
 
+#include <iostream>
 #include <list>
 #include "Person.h"
 #include "Student.h"
@@ -47,35 +48,40 @@ Student::~Student() {
 }
 
 std::list<std::string> Student::getCourses() {
-	std::list<std::string> courses;
-	return courses;
+	return stud_courses;
 }
 
 void Student::addCourse(std::string course) {
-
+	stud_courses.push_front(course);
 }
 
 void Student::removeCourse(std::string course) {
-
+	stud_courses.remove(course);
 }
 
 void Student::printCourses() {
-
+	for(std::list<std::string>::iterator it = stud_courses.begin(); it != stud_courses.end(); ++it) {
+		std::cout << " " << *it;
+	}
+	std::cout << std::endl;
 }
 
 void Student::setCourses(std::list<std::string> courses) {
-
+	while(courses.size() != 0) {
+		stud_courses.push_front(courses.front());
+		courses.pop_front();
+	}
 }
 
 void Student::clearCourses() {
-
+	stud_courses.clear();
 }
 
 struct tm Student::getAdmitDate() {
 	struct tm admitDate;
 	admitDate.tm_mday = admit_day;
 	admitDate.tm_mon = admit_month;
-	admitDate.tm_year = admit_year + 1900;
+	admitDate.tm_year = admit_year - 1900;
 	return admitDate;
 }
 
